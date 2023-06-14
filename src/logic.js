@@ -8,6 +8,7 @@ window.onload = function () {
   const choiceCbtn = document.getElementById("choiceC");
   const choiceDbtn = document.getElementById("choiceD");
   const currentScore = document.getElementById("current-score");
+  const progress = document.getElementById("progress");
 
   startButton.addEventListener("click", function () {
     startGame();
@@ -22,6 +23,9 @@ window.onload = function () {
     choiceBbtn.innerText = game.questions[game.currentQuestion].choiceB;
     choiceCbtn.innerText = game.questions[game.currentQuestion].choiceC;
     choiceDbtn.innerText = game.questions[game.currentQuestion].choiceD;
+    progress.innerHTML = `${game.currentQuestion + 1} of ${
+      game.questions.length
+    }`;
   }
   const choiceButtons = [
     questionTag,
@@ -44,6 +48,9 @@ window.onload = function () {
       if (game.currentQuestion >= game.questions.length - 1) {
         game.endGame();
       } else {
+        progress.innerHTML = `${game.currentQuestion + 2} of ${
+          game.questions.length
+        }`;
         game.nextQuestion();
         questionTag.innerHTML = game.questions[game.currentQuestion].question;
         choiceAbtn.innerText = game.questions[game.currentQuestion].choiceA;

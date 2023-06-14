@@ -7,6 +7,7 @@ class Game {
 
     this.PlayerScore = 0;
     this.currentQuestion = 0;
+    this.progress = document.getElementById("progress");
 
     this.optionA = document.getElementById("choiceA");
     this.optionB = document.getElementById("choiceB");
@@ -129,9 +130,9 @@ class Game {
     this.gameScreen.style.display = "none";
 
     if (this.PlayerScore >= 60) {
-      this.gameEndScreenWinner = "block";
+      this.gameEndScreenWinner.style.display = "block";
     } else {
-      this.gameEndScreenLoser = "block";
+      this.gameEndScreenLoser.style.display = "block";
     }
   }
 }
