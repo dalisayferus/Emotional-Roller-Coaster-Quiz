@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Press Start | Liquid Loader Animation</title>
+    <link rel="stylesheet" href="/style/style.css" />
+  </head>
+  <body>
+    <main>
+      <div id="game-intro">
+        <button id="start-button">
+          <h1>Press Start</h1>
+        </button>
+      </div>
+
+      <div id="game-container">
+        <div id="game-screen">
+          <h1>Quiz</h1>
+          <hr style="margin-top: 20px" />
+
+          <p id="question">my question</p>
+          <div class="buttons">
+            <button id="btn1">
+              <span id="choiceA"></span>
+            </button>
+            <button id="btn2">
+              <span id="choiceB"></span>
+            </button>
+            <button id="btn3">
+              <span id="choiceC"></span>
+            </button>
+            <button id="btn4">
+              <span id="choiceD"></span>
+            </button>
+          </div>
+          <hr style="margin-top: 10px" />
+          <footer>
+            <p id="progress">For x of y.</p>
+            <div id="score">
+              <p>Score: <span id="current-score">0</span></p>
+            </div>
+          </footer>
+        </div>
+      </div>
+
+      <div id="game-end-winner">
+        <h1>Winner</h1>
+      </div>
+
+      <div id="game-end-loser">
+        <h1>Loser</h1>
+      </div>
+    </main>
+    <script src="/src/game.js"></script>
+    <script src="/src/logic.js"></script>
+  </body>
+</html>
