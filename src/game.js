@@ -29,7 +29,7 @@ class Game {
         choiceB: "color",
         choiceC: "background-color",
         choiceD: "font-color",
-        correct: "C",
+        correct: "background-color",
       },
       {
         question:
@@ -38,7 +38,7 @@ class Game {
         choiceB: '<script href="script.js"></script>',
         choiceC: '<script link="script.js"></script>',
         choiceD: '<script import="script.js"></script>',
-        correct: "A",
+        correct: '<script src="script.js"></script>',
       },
       {
         question: 'What is the purpose of the CSS property "float"?',
@@ -47,7 +47,8 @@ class Game {
         choiceC: "It changes the font style of an element.",
         choiceD:
           "It controls the positioning of an element in relation to its parent.",
-        correct: "D",
+        correct:
+          "It controls the positioning of an element in relation to its parent.",
       },
       {
         question: "Which JavaScript keyword is used to declare a variable?",
@@ -55,7 +56,7 @@ class Game {
         choiceB: "float",
         choiceC: "varName",
         choiceD: "int",
-        correct: "A ",
+        correct: "let",
       },
       {
         question:
@@ -64,7 +65,7 @@ class Game {
         choiceB: "#myElement",
         choiceC: "element=myElement",
         choiceD: "@myElement",
-        correct: "B",
+        correct: "#myElement",
       },
       {
         question: "What is the correct syntax for a comment in JavaScript?",
@@ -72,7 +73,7 @@ class Game {
         choiceB: "// This is a comment",
         choiceC: "/* This is a comment",
         choiceD: "# This is a comment",
-        correct: "B",
+        correct: "// This is a comment",
       },
       {
         question: "Which HTML tag is used to create a numbered list?",
@@ -80,7 +81,7 @@ class Game {
         choiceB: "<ul>",
         choiceC: "<li>",
         choiceD: "<list>",
-        correct: "A",
+        correct: "<ol>",
       },
       {
         question: "How can you apply a border to an HTML element using CSS?",
@@ -88,7 +89,7 @@ class Game {
         choiceB: "border-width: 1px; border-style: solid; border-color: black",
         choiceC: "border: 1px solid black",
         choiceD: "border-style: solid",
-        correct: "C",
+        correct: "border: 1px solid black",
       },
       {
         question:
@@ -97,7 +98,7 @@ class Game {
         choiceB: "pop()",
         choiceC: "shift()",
         choiceD: "unshift()",
-        correct: "A",
+        correct: "push()",
       },
     ];
   }
@@ -111,6 +112,14 @@ class Game {
 
   nextQuestion() {
     this.currentQuestion += 1;
+  }
+
+  upgradeScore() {
+    this.PlayerScore += 10;
+  }
+
+  downgradeScore() {
+    this.PlayerScore -= 10;
   }
 
   endGame() {

@@ -7,6 +7,7 @@ window.onload = function () {
   const choiceBbtn = document.getElementById("choiceB");
   const choiceCbtn = document.getElementById("choiceC");
   const choiceDbtn = document.getElementById("choiceD");
+  const currentScore = document.getElementById("current-score");
 
   startButton.addEventListener("click", function () {
     startGame();
@@ -22,9 +23,6 @@ window.onload = function () {
     choiceCbtn.innerText = game.questions[game.currentQuestion].choiceC;
     choiceDbtn.innerText = game.questions[game.currentQuestion].choiceD;
   }
-
-  function allQuestions(questions) {}
-
   const choiceButtons = [
     questionTag,
     choiceAbtn,
@@ -35,9 +33,11 @@ window.onload = function () {
 
   choiceButtons.forEach((e) => {
     e.addEventListener("click", (e) => {
-      console.log(
-        e.target.innerText === game.questions[game.currentQuestion].correct
-      );
+      if (e.target.innerText === game.questions[game.currentQuestion].correct) {
+        currentScore.innerHTML = game.upgradeScore();
+      } else {
+        game.downgradeScore();
+      }
       // game.nextQuestion();
       // questionTag.innerHTML = game.questions[game.currentQuestion].question;
       // choiceAbtn.innerText = game.questions[game.currentQuestion].choiceA;
@@ -47,10 +47,5 @@ window.onload = function () {
     });
   });
 
-  // game.PlayerScore = document.getElementsByTagName("current-score");
-  // if (click === game.currentQuestion.correct) {
-  //   game.PlayerScore += 10;
-  // } else {
-  //   game.PlayerScore -= 10;
-  // }
+  
 };
