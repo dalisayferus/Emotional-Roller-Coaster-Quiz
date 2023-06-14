@@ -34,18 +34,23 @@ window.onload = function () {
   choiceButtons.forEach((e) => {
     e.addEventListener("click", (e) => {
       if (e.target.innerText === game.questions[game.currentQuestion].correct) {
-        currentScore.innerHTML = game.upgradeScore();
+        game.upgradeScore();
+        currentScore.innerHTML = game.PlayerScore;
       } else {
         game.downgradeScore();
+        currentScore.innerHTML = game.PlayerScore;
       }
-      // game.nextQuestion();
-      // questionTag.innerHTML = game.questions[game.currentQuestion].question;
-      // choiceAbtn.innerText = game.questions[game.currentQuestion].choiceA;
-      // choiceBbtn.innerText = game.questions[game.currentQuestion].choiceB;
-      // choiceCbtn.innerText = game.questions[game.currentQuestion].choiceC;
-      // choiceDbtn.innerText = game.questions[game.currentQuestion].choiceD;
+
+      if (game.currentQuestion >= game.questions.length - 1) {
+        game.endGame();
+      } else {
+        game.nextQuestion();
+        questionTag.innerHTML = game.questions[game.currentQuestion].question;
+        choiceAbtn.innerText = game.questions[game.currentQuestion].choiceA;
+        choiceBbtn.innerText = game.questions[game.currentQuestion].choiceB;
+        choiceCbtn.innerText = game.questions[game.currentQuestion].choiceC;
+        choiceDbtn.innerText = game.questions[game.currentQuestion].choiceD;
+      }
     });
   });
-
-  
 };

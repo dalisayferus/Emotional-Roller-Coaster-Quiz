@@ -119,7 +119,9 @@ class Game {
   }
 
   downgradeScore() {
-    this.PlayerScore -= 10;
+    if (this.PlayerScore !== 0) {
+      this.PlayerScore -= 10;
+    }
   }
 
   endGame() {
