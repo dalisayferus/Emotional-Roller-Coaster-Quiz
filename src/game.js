@@ -4,6 +4,7 @@ class Game {
     this.gameScreen = document.getElementById("game-screen");
     this.gameEndScreenWinner = document.getElementById("game-end-winner");
     this.gameEndScreenLoser = document.getElementById("game-end-loser");
+    this.loadBar = document.getElementById("load-bar");
 
     this.PlayerScore = 0;
     this.currentQuestion = 0;
@@ -38,18 +39,17 @@ class Game {
         choiceA: '<script src="script.js"></script>',
         choiceB: '<script href="script.js"></script>',
         choiceC: '<script link="script.js"></script>',
-        choiceD: '<script import="script.js"></script>',
+        choiceD: '<script add="script.js"></script>',
         correct: '<script src="script.js"></script>',
       },
       {
-        question: 'What is the purpose of the CSS property "float"?',
-        choiceA: "It makes an element float on water.",
-        choiceB: "It determines the width of an element.",
-        choiceC: "It changes the font style of an element.",
-        choiceD:
-          "It controls the positioning of an element in relation to its parent.",
-        correct:
-          "It controls the positioning of an element in relation to its parent.",
+        question:
+          "How can you create a fixed-position element that remains visible even when scrolling?",
+        choiceA: "position: static",
+        choiceB: "position: fixed",
+        choiceC: "position: relative",
+        choiceD: "position: absolute",
+        correct: "position: fixed",
       },
       {
         question: "Which JavaScript keyword is used to declare a variable?",
@@ -70,7 +70,7 @@ class Game {
       },
       {
         question: "What is the correct syntax for a comment in JavaScript?",
-        choiceA: "<!-- This is a comment -->",
+        choiceA: "<!--This is a comment-->",
         choiceB: "// This is a comment",
         choiceC: "/* This is a comment",
         choiceD: "# This is a comment",
@@ -85,12 +85,13 @@ class Game {
         correct: "<ol>",
       },
       {
-        question: "How can you apply a border to an HTML element using CSS?",
-        choiceA: "border: black",
-        choiceB: "border-width: 1px; border-style: solid; border-color: black",
-        choiceC: "border: 1px solid black",
-        choiceD: "border-style: solid",
-        correct: "border: 1px solid black",
+        question:
+          "Which event is triggered when a user clicks on an HTML element?",
+        choiceA: "onclick",
+        choiceB: "onmouseover",
+        choiceC: "onkeydown",
+        choiceD: "onchange",
+        correct: "onclick",
       },
       {
         question:
