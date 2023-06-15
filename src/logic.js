@@ -1,3 +1,4 @@
+// first step: get all needed elements on load of the browser window
 window.onload = function () {
   const startButton = document.getElementById("start-button");
   console.log("start game", startButton);
@@ -17,11 +18,12 @@ window.onload = function () {
   startBtn.addEventListener("click", () => {
     loadBar.style.display = "flex";
   });
-
+  // creating an Event for clicking the start button. Game starts after the click
   startButton.addEventListener("click", function () {
     startGame();
   });
 
+  // starting the game
   function startGame() {
     console.log("start game");
     game = new Game();
@@ -35,6 +37,8 @@ window.onload = function () {
       game.questions.length
     }`;
   }
+
+  // creating a variable for all buttons to make the code cleaner
   const choiceButtons = [
     questionTag,
     choiceAbtn,
@@ -43,6 +47,7 @@ window.onload = function () {
     choiceDbtn,
   ];
 
+  // Gameplay: tracking every click with eventListener and updating the score and my loadbar
   choiceButtons.forEach((e) => {
     e.addEventListener("click", (e) => {
       if (e.target.innerText === game.questions[game.currentQuestion].correct) {
@@ -57,6 +62,7 @@ window.onload = function () {
         console.log(game.PlayerScore);
       }
 
+      // going through the array of questions and tracking the end of it to trigger the endGame method
       if (game.currentQuestion >= game.questions.length - 1) {
         game.endGame();
       } else {
