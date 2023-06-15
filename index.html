@@ -11,33 +11,37 @@
           <h1>Press Start</h1>
         </button>
       </div>
+<div id="liquid-container">
 
+</div>
       <div id="game-container">
         <div id="game-screen">
-          <h1>Quiz</h1>
-          <hr style="margin-top: 20px" />
-
-          <p id="question">my question</p>
-          <div class="buttons">
-            <button id="btn1">
-              <span id="choiceA"></span>
-            </button>
-            <button id="btn2">
-              <span id="choiceB"></span>
-            </button>
-            <button id="btn3">
-              <span id="choiceC"></span>
-            </button>
-            <button id="btn4">
-              <span id="choiceD"></span>
-            </button>
+          <div class="title">
+            <h1>Quiz</h1>
           </div>
-          <hr style="margin-top: 10px" />
+          <div class="question-screen">
+            <p id="question">my question</p>
+            <div class="buttons">
+              <button id="btn1">
+                <span id="choiceA"></span>
+              </button>
+              <button id="btn2">
+                <span id="choiceB"></span>
+              </button>
+              <button id="btn3">
+                <span id="choiceC"></span>
+              </button>
+              <button id="btn4">
+                <span id="choiceD"></span>
+              </button>
+            </div>
+          </div>
+
           <footer>
-            <p id="progress"></p>
             <div id="score">
               <p>Score: <span id="current-score">0</span></p>
             </div>
+            <div id="progress"><p></p></div>
           </footer>
         </div>
       </div>
@@ -49,6 +53,7 @@
       <div id="game-end-loser">
         <h1>Loser</h1>
       </div>
+      <div class="element-container"></div>
     </main>
     <script src="/src/game.js"></script>
     <script src="/src/logic.js"></script>
