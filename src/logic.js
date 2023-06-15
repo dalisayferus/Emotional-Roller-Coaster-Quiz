@@ -9,6 +9,7 @@ window.onload = function () {
   const choiceDbtn = document.getElementById("choiceD");
   const currentScore = document.getElementById("current-score");
   const progress = document.getElementById("progress");
+  const loadBar = document.getElementById("load-bar-container");
 
   startButton.addEventListener("click", function () {
     startGame();
@@ -40,9 +41,13 @@ window.onload = function () {
       if (e.target.innerText === game.questions[game.currentQuestion].correct) {
         game.upgradeScore();
         currentScore.innerHTML = game.PlayerScore;
+        game.loadBar.style.height = `${game.PlayerScore}%`;
+        console.log(game.PlayerScore);
       } else {
         game.downgradeScore();
         currentScore.innerHTML = game.PlayerScore;
+        game.loadBar.style.height = `${game.PlayerScore}%`;
+        console.log(game.PlayerScore);
       }
 
       if (game.currentQuestion >= game.questions.length - 1) {
