@@ -5,7 +5,7 @@ class Game {
     this.gameEndScreenWinner = document.getElementById("game-end-winner");
     this.gameEndScreenLoser = document.getElementById("game-end-loser");
     this.loadBar = document.getElementById("load-bar");
-
+    
     this.PlayerScore = 0;
     this.currentQuestion = 0;
     this.progress = document.getElementById("progress");

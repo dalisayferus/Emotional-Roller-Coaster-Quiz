@@ -11,6 +11,13 @@ window.onload = function () {
   const progress = document.getElementById("progress");
   const loadBar = document.getElementById("load-bar-container");
 
+  loadBar.style.display = "none";
+
+  const startBtn = document.querySelector("#start-button");
+  startBtn.addEventListener("click", () => {
+    loadBar.style.display = "flex";
+  });
+
   startButton.addEventListener("click", function () {
     startGame();
   });
