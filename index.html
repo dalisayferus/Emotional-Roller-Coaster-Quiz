@@ -6,19 +6,23 @@
   </head>
   <body>
     <main>
+      <!-- the first screen player sees -->
       <div id="game-intro">
         <button id="start-button">
-          <h1>Press Start</h1>
+          <h1>Start</h1>
         </button>
       </div>
+      <!-- Container, which includes all of the gameplay elements -->
       <section id="game-container">
         <div id="load-bar-container">
           <div id="load-bar"></div>
         </div>
+        <!-- Loadbar and Game screen are two different divs to separate them from each other and use flex-box -->
         <div id="game-screen">
           <div class="title">
             <h1>Quiz</h1>
           </div>
+          <!-- Questions and Answers -->
           <div class="question-screen">
             <p id="question">my question</p>
             <div class="buttons">
@@ -36,7 +40,7 @@
               </button>
             </div>
           </div>
-
+          <!-- Score and question tracking -->
           <footer>
             <div id="score">
               <p>Score: <span id="current-score">0</span></p>
@@ -45,7 +49,7 @@
           </footer>
         </div>
       </section>
-
+      <!-- the end screen -->
       <div id="game-end-winner">
         <h1>Winner</h1>
       </div>

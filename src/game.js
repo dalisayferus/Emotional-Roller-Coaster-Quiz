@@ -1,11 +1,13 @@
+// creating the Game class which includes all of the game elements
 class Game {
   constructor() {
+    // accessing HTML files
     this.startScreen = document.getElementById("game-intro");
     this.gameScreen = document.getElementById("game-screen");
     this.gameEndScreenWinner = document.getElementById("game-end-winner");
     this.gameEndScreenLoser = document.getElementById("game-end-loser");
     this.loadBar = document.getElementById("load-bar");
-    
+
     this.PlayerScore = 0;
     this.currentQuestion = 0;
     this.progress = document.getElementById("progress");
@@ -104,8 +106,9 @@ class Game {
       },
     ];
   }
-
+  // creating methods to start the game, go to the next question, upgrade score and end the game
   start() {
+    // showing the game screen and hiding the rest
     this.startScreen.style.display = "none";
     this.gameScreen.style.display = "block";
     this.gameEndScreenWinner.style.display = "none";
@@ -130,6 +133,7 @@ class Game {
     this.startScreen.style.display = "none";
     this.gameScreen.style.display = "none";
 
+    // applying losing / winning logic. Base on score show the correct screen
     if (this.PlayerScore >= 60) {
       this.gameEndScreenWinner.style.display = "block";
     } else {
